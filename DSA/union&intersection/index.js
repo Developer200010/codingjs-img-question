@@ -57,4 +57,20 @@ class Set {
   
       return newSet;
     }
+  
+    difference(set) {
+      const newSet = new Set();
+      this.values().forEach(value => {
+        if (!set.values().includes(value))
+            newSet.add(value);
+      })
+  
+      return newSet;
+    }
+  
+    isSubsetOf(set) {
+      return this
+        .values()
+        .every(value => set.values().includes(value));
+    }
   }
